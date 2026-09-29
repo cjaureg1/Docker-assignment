@@ -1,19 +1,5 @@
-# Hello Docker
-
-A minimal Docker project that serves a static HTML login page using `nginx:alpine`.
-
-## Project Structure
-
-| Path | Purpose |
-| --- | --- |
-| `Dockerfile` | Builds the Nginx container. |
-| `README.md` | Project details and usage instructions. |
-| `app/index.html` | One-page login prototype. |
-| `app/style.css` | Styles for the login page. |
-| `app/images/` | Folder for image assets. |
-| `docs/` | Login sketch and submission checklist. |
-| `tests/login.cjs` | Automated browser checks. |
-| `.github/workflows/docker-check.yml` | Docker build and test workflow. |
+# Agile Login Prototype
+A one-page classroom login demo served with Nginx in Docker.
 
 ## User story
 As a returning user, I want to enter my login details, so that I can reach the application.
