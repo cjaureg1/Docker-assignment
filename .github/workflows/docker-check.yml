@@ -1,0 +1,25 @@
+name: Docker login checks
+on: [push, workflow_dispatch]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: docker build -t hello-docker .
+      - run: docker run -d -p 8080:80 --name login-prototype hello-docker
+      - run: curl --retry 10 --retry-connrefused --retry-delay 1 --fail http://localhost:8080
+      - run: npm install --no-save playwright
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/login.cjs
+        env:
+          TEST_URL: http://localhost:8080
+      - uses: actions/upload-artifact@v4
+        with:
+          name: docker-login-screenshot
+          path: docs/login-preview.png
+      - if: always()
+        run: docker logs login-prototype
+
