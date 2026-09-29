@@ -32,8 +32,7 @@ The initial wireframe is [docs/login-sketch.svg](docs/login-sketch.svg).
 See [docs/submission.md](docs/submission.md) for the checklist.
 
 ## Board
-Create a GitHub Project with **To Do**, **Doing**, and **Done**.
-Add the login user story and the sketch, build, and test issues from this repository. Assign actual teammates and move cards as work progresses.
+[Docker Login Prototype board](https://github.com/users/cjaureg1/projects/1) has **To Do**, **Doing**, and **Done**, with one story and three assigned task issues. Chris currently owns the tasks; reassign to actual teammates as agreed. Customer review remains pending.
 
 ## Clean up
 ```sh
@@ -44,6 +43,8 @@ docker rmi hello-docker
 ```
 
 ## Automated checks
-The GitHub Actions workflow builds the Docker image, starts the container, checks HTTP delivery, and tests empty fields, invalid email, incorrect credentials, and successful login in Chromium. It saves a screenshot and browser test report as a workflow artifact.
+The GitHub Actions workflow builds the Docker image, starts the container, checks HTTP delivery, and tests empty fields, invalid email, incorrect credentials, and successful login in Chromium. It saves a screenshot as a workflow artifact.
 A CI screenshot is evidence of the CI container; the class submission may still require a screenshot from your own computer.
 
+
+Verified Docker build, container HTTP delivery, and all browser checks: https://github.com/cjaureg1/Docker-assignment/actions/runs/36638732775
